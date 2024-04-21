@@ -89,3 +89,36 @@ p {
 .full-width {
     flex-basis: 100%;
 }
+
+/* Style for regular links */
+a {
+    color: #F4F4F4;
+    font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+    a:hover {
+        color: #F4F4F4;
+        font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+        font-size: 14px;
+        text-decoration: none; /* Remove underline */
+    }
+
+    a:visited {
+        color: #F4F4F4;
+        font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+        font-size: 14px;
+    }
+
+/* Remove margin and padding from the unordered list */
+ul {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Remove default list styling */
+ul,
+li {
+    list-style: none; /* Remove bullets */
+}
