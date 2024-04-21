@@ -2,6 +2,10 @@
     background-color: black;
 }
 
+header {
+    padding: 10px;
+}
+
 h1 {
     color: #F4F4F4;
     font-family: 'Kozuka Gothic Pr6N', 'Montserrat', 'Mplus 1p', 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic, 'Yu Gothic', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
@@ -51,26 +55,37 @@ p {
     }
 
 .container {
-    display: grid;
-    grid-template-rows: auto auto 1fr 1fr; /* Four rows: header, row 1, row 2, row 3 */
-    grid-template-columns: 1fr; /* Single column */
-    max-width: 600px; /* Maximum width of the container */
+    max-width: 600px;
     justify-content: start; /* Align grid items to the start (left) */
 }
 
-.grid {
-    display: grid;
-    grid-template-rows: repeat(2, auto);
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+@media (min-width: 1024px) {
+    .container {
+        justify-content: start; /* Align grid items to the start (left) */
+    }
+
+    .flex-container {
+        flex-direction: row; /* Switch to two-column layout when width is 1024px or more */
+    }
 }
 
-.grid-item {
-    /* border: 1px solid #ccc;  */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    flex: 1 1 100%; /* One column by default */
     padding: 10px;
-    margin: 5px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+    .flex-item {
+        flex: 1 1 50%; /* Two columns when width is 1024px or more */
+    }
 }
 
 .full-width {
-    grid-column: 1 / -1; /* Spans across all columns */
+    flex-basis: 100%;
 }
