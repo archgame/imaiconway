@@ -3,22 +3,74 @@
 }
 
 h1 {
-    color: white;
+    color: #F4F4F4;
     font-family: 'Kozuka Gothic Pr6N', 'Montserrat', 'Mplus 1p', 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic, 'Yu Gothic', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
     /* 'Hiragino Kaku Gothic ProN', 'Meiryo', 'Noto Sans CJK', 'M PLUS Rounded', 'Source Han Sans','Axis Font' */
     /* 'Montserrat', 'Mplus 1p', 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic, 'Yu Gothic', 'ＭＳ ゴシック', 'MS Gothic', sans-serif; */
     font-weight: 100;
-    font-size: 48px;
+    font-size: 58px;
     line-height: 12px;
 }
 
 h2 {
-    color: white;
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #F4F4F4;
+    font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
     font-size: 35px;
+    font-weight: 500;
 }
 
 p {
-    color: white;
-    font-size: 8px;
+    color: #F4F4F4;
+    font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+.text {
+    color: #F4F4F4;
+    font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+    font-size: 14px;
+    text-align: justify;
+}
+
+    .text::after {
+        color: #F4F4F4;
+        font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+        font-size: 14px;
+        text-align: justify;
+        content: '';
+        display: inline-block;
+        width: 100%;
+    }
+
+    .text:last-child::after {
+        color: #F4F4F4;
+        font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+        font-size: 14px;
+        text-align: justify;
+        content: none;
+    }
+
+.container {
+    display: grid;
+    grid-template-rows: auto auto 1fr 1fr; /* Four rows: header, row 1, row 2, row 3 */
+    grid-template-columns: 1fr; /* Single column */
+    max-width: 600px; /* Maximum width of the container */
+    justify-content: start; /* Align grid items to the start (left) */
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.grid-item {
+    /* border: 1px solid #ccc;  */
+    padding: 10px;
+    margin: 5px;
+}
+
+.full-width {
+    grid-column: 1 / -1; /* Spans across all columns */
 }
