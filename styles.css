@@ -2,23 +2,138 @@
     background-color: black;
 }
 
+header {
+    padding: 10px;
+}
+
 h1 {
-    color: white;
+    color: #F4F4F4;
     font-family: 'Kozuka Gothic Pr6N', 'Montserrat', 'Mplus 1p', 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic, 'Yu Gothic', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
     /* 'Hiragino Kaku Gothic ProN', 'Meiryo', 'Noto Sans CJK', 'M PLUS Rounded', 'Source Han Sans','Axis Font' */
     /* 'Montserrat', 'Mplus 1p', 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic, 'Yu Gothic', 'ＭＳ ゴシック', 'MS Gothic', sans-serif; */
     font-weight: 100;
-    font-size: 48px;
+    font-size: 58px;
     line-height: 12px;
 }
 
 h2 {
-    color: white;
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #F4F4F4;
+    font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
     font-size: 35px;
+    font-weight: 500;
 }
 
 p {
-    color: white;
-    font-size: 8px;
+    color: #F4F4F4;
+    font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+.text {
+    color: #F4F4F4;
+    font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+    font-size: 14px;
+    text-align: justify;
+}
+
+    .text::after {
+        color: #F4F4F4;
+        font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+        font-size: 14px;
+        text-align: justify;
+        content: '';
+        display: inline-block;
+        width: 100%;
+    }
+
+    .text:last-child::after {
+        color: #F4F4F4;
+        font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+        font-size: 14px;
+        text-align: justify;
+        content: none;
+    }
+
+.container {
+    max-width: 600px;
+    justify-content: start; /* Align grid items to the start (left) */
+}
+
+@media (min-width: 1024px) {
+    .container {
+        justify-content: start; /* Align grid items to the start (left) */
+    }
+
+    .flex-container {
+        flex-direction: row; /* Switch to two-column layout when width is 1024px or more */
+    }
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    flex: 1 1 100%; /* One column by default */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+    .flex-item {
+        flex: 1 1 50%; /* Two columns when width is 1024px or more */
+    }
+}
+
+.full-width {
+    flex-basis: 100%;
+}
+
+/* Style for regular links */
+a {
+    color: #F4F4F4;
+    font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+    a:hover {
+        color: #F4F4F4;
+        font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+        font-size: 14px;
+        text-decoration: none; /* Remove underline */
+    }
+
+    a:visited {
+        color: #F4F4F4;
+        font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+        font-size: 14px;
+    }
+
+/* Remove margin and padding from the unordered list */
+ul {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Remove default list styling */
+ul,
+li {
+    list-style: none; /* Remove bullets */
+}
+
+/* Container for the Instagram icon */
+.instagram-container {
+    text-align: left; /* Left-align the content */
+}
+
+/* Instagram icon styling */
+.instagram-link {
+    display: inline-block; /* Align with other inline elements */
+}
+
+.instagram-icon {
+    width: 30px; /* Set the width of the icon */
+    height: 30px; /* Set the height of the icon */
 }
