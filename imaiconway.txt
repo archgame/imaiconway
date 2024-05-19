@@ -1,0 +1,9 @@
+cd C:\Users\mconway\Downloads\imaiconway
+python -m http.server 8000
+http://localhost:8000/
+
+WEB TO DO:
+drip list
+instagram
+qr code
+hello@imaiconway.com

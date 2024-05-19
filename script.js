@@ -4,30 +4,38 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.text())
         .then(data => {
             // Parse CSV data
-            const rows = data.split('\n');
-            const headers = rows[0].split(',');
-            const links = [];
+            const rows = data.split('\n').slice(1); // Skip the header row
+            const linksByYear = {};
 
-            for (let i = 1; i < rows.length; i++) {
-                const values = rows[i].split(',');
-                const link = {};
+            rows.forEach(row => {
+                const [year, displayText, link] = row.split(',');
 
-                for (let j = 0; j < headers.length; j++) {
-                    link[headers[j].trim()] = values[j].trim();
+                if (!linksByYear[year]) {
+                    linksByYear[year] = [];
                 }
 
-                links.push(link);
-            }
+                linksByYear[year].push({ displayText: displayText.trim(), link: link.trim() });
+            });
 
             // Generate HTML for links
             const linksContainer = document.getElementById('links-container');
-            links.forEach(link => {
-                const listItem = document.createElement('li');
-                const anchor = document.createElement('a');
-                anchor.textContent = link['Display Text'];
-                anchor.href = link['Link'];
-                listItem.appendChild(anchor);
-                linksContainer.appendChild(listItem);
+
+            // Sort the years in descending order
+            const sortedYears = Object.keys(linksByYear).sort((a, b) => b - a);
+
+            sortedYears.forEach(year => {
+                const yearParagraph = document.createElement('p');
+                yearParagraph.textContent = year;
+                linksContainer.appendChild(yearParagraph);
+
+                linksByYear[year].forEach(linkData => {
+                    const listItem = document.createElement('li');
+                    const anchor = document.createElement('a');
+                    anchor.textContent = linkData.displayText;
+                    anchor.href = linkData.link;
+                    listItem.appendChild(anchor);
+                    linksContainer.appendChild(listItem);
+                });
             });
         })
         .catch(error => {
