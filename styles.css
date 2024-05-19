@@ -122,3 +122,18 @@ ul,
 li {
     list-style: none; /* Remove bullets */
 }
+
+/* Container for the Instagram icon */
+.instagram-container {
+    text-align: left; /* Left-align the content */
+}
+
+/* Instagram icon styling */
+.instagram-link {
+    display: inline-block; /* Align with other inline elements */
+}
+
+.instagram-icon {
+    width: 40px; /* Set the width of the icon */
+    height: 40px; /* Set the height of the icon */
+}
