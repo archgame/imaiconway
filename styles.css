@@ -2,7 +2,7 @@
     background-color: black;
 }
 
-header {
+.header, .footer {
     padding: 10px;
 }
 

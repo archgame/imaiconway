@@ -63,4 +63,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fetch and display links from drips.csv and drops.csv
     fetchAndDisplayLinks('drips.csv', 'drips-container');
     fetchAndDisplayLinks('drops.csv', 'drops-container');
+
+    // contact
+    var a = "studio";
+    var b = "imaiconway";
+    var c = "com";
+    var d = a + "@" + b + "." + c;
+    var e = document.getElementById("email-link");
+    e.innerHTML = '<a href="mailto:' + d + '">' + d + '</a>';
 });
