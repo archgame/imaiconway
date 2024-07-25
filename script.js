@@ -9,28 +9,33 @@ document.addEventListener('DOMContentLoaded', function () {
                 const displayTextCount = {}; // To track duplicate display texts
 
                 rows.forEach(row => {
-                    const [year, displayText, link] = row.split(',');
+                    // Split the row into columns and trim each value
+                    const columns = row.split(',').map(col => col.trim());
 
-                    if (!linksByYear[year]) {
-                        linksByYear[year] = [];
-                    }
+                    // Check if the row has exactly 3 columns
+                    if (columns.length === 3) {
+                        const [year, displayText, link] = columns;
 
-                    const trimmedDisplayText = displayText.trim();
-                    const trimmedLink = link.trim();
+                        if (!linksByYear[year]) {
+                            linksByYear[year] = [];
+                        }
 
-                    // Handle duplicate display texts
-                    if (displayTextCount[trimmedDisplayText]) {
-                        displayTextCount[trimmedDisplayText]++;
-                        linksByYear[year].push({
-                            displayText: `${trimmedDisplayText} (${displayTextCount[trimmedDisplayText]})`,
-                            link: trimmedLink
-                        });
+                        // Handle duplicate display texts
+                        if (displayTextCount[displayText]) {
+                            displayTextCount[displayText]++;
+                            linksByYear[year].push({
+                                displayText: `${displayText} (${displayTextCount[displayText]})`,
+                                link: link
+                            });
+                        } else {
+                            displayTextCount[displayText] = 1;
+                            linksByYear[year].push({
+                                displayText: displayText,
+                                link: link
+                            });
+                        }
                     } else {
-                        displayTextCount[trimmedDisplayText] = 1;
-                        linksByYear[year].push({
-                            displayText: trimmedDisplayText,
-                            link: trimmedLink
-                        });
+                        console.warn('Skipping malformed row:', row);
                     }
                 });
 
@@ -45,14 +50,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     yearParagraph.textContent = year;
                     linksContainer.appendChild(yearParagraph);
 
+                    const ul = document.createElement('ul'); // Create an unordered list for each year
+
                     linksByYear[year].forEach(linkData => {
                         const listItem = document.createElement('li');
                         const anchor = document.createElement('a');
                         anchor.textContent = linkData.displayText;
                         anchor.href = linkData.link;
+                        anchor.target = "_blank"; // Open link in a new tab
                         listItem.appendChild(anchor);
-                        linksContainer.appendChild(listItem);
+                        ul.appendChild(listItem); // Append list item to the unordered list
                     });
+
+                    linksContainer.appendChild(ul); // Append the unordered list to the container
                 });
             })
             .catch(error => {
