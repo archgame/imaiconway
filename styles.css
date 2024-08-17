@@ -8,9 +8,7 @@
 
 h1 {
     color: #F4F4F4;
-    font-family: 'Kozuka Gothic Pr6N', 'Montserrat', 'Mplus 1p', 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic, 'Yu Gothic', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
-    /* 'Hiragino Kaku Gothic ProN', 'Meiryo', 'Noto Sans CJK', 'M PLUS Rounded', 'Source Han Sans','Axis Font' */
-    /* 'Montserrat', 'Mplus 1p', 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic, 'Yu Gothic', 'ＭＳ ゴシック', 'MS Gothic', sans-serif; */
+    font-family: 'Kozuka Gothic Pr6N', 'Montserrat', 'Mplus 1p', 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', 'YuGothic', 'Yu Gothic', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
     font-weight: 100;
     font-size: 58px;
     line-height: 12px;
@@ -18,27 +16,27 @@ h1 {
 
 h2 {
     color: #F4F4F4;
-    font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+    font-family: 'Input Mono', 'Berkeley Mono', 'Fragment Mono', 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Courier New', monospace;
     font-size: 35px;
     font-weight: 500;
 }
 
 p {
     color: #F4F4F4;
-    font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+    font-family: 'Input Mono', 'Berkeley Mono', 'Fragment Mono', 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Courier New', monospace;
     font-size: 14px;
 }
 
 .text {
     color: #F4F4F4;
-    font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+    font-family: 'Input Mono', 'Berkeley Mono', 'Fragment Mono', 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Courier New', monospace;
     font-size: 14px;
     text-align: justify;
 }
 
     .text::after {
         color: #F4F4F4;
-        font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+        font-family: 'Input Mono', 'Berkeley Mono', 'Fragment Mono', 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Courier New', monospace;
         font-size: 14px;
         text-align: justify;
         content: '';
@@ -48,7 +46,7 @@ p {
 
     .text:last-child::after {
         color: #F4F4F4;
-        font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+        font-family: 'Input Mono', 'Berkeley Mono', 'Fragment Mono', 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Courier New', monospace;
         font-size: 14px;
         text-align: justify;
         content: none;
@@ -93,21 +91,21 @@ p {
 /* Style for regular links */
 a {
     color: #F4F4F4;
-    font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+    font-family: 'Input Mono', 'Berkeley Mono', 'Fragment Mono', 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Courier New', monospace;
     font-size: 14px;
     text-decoration: underline;
 }
 
     a:hover {
         color: #F4F4F4;
-        font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+        font-family: 'Input Mono', 'Berkeley Mono', 'Fragment Mono', 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Courier New', monospace;
         font-size: 14px;
         text-decoration: none; /* Remove underline */
     }
 
     a:visited {
         color: #F4F4F4;
-        font-family: 'Input Mono','Helvetica', 'Arial', sans-serif;
+        font-family: 'Input Mono', 'Berkeley Mono', 'Fragment Mono', 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Courier New', monospace;
         font-size: 14px;
     }
 
