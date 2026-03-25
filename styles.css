@@ -121,9 +121,16 @@ li {
     list-style: none; /* Remove bullets */
 }
 
+/* Row wrapper for header icons */
+.icons-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
 /* Container for the Instagram icon */
 .instagram-container {
-    text-align: left; /* Left-align the content */
+    display: inline-block;
 }
 
 /* Instagram icon styling */
